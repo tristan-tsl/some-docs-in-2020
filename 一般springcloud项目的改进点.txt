@@ -1,0 +1,23 @@
+动静分离:
+	使用目录隔离不同类型的一组工程, 为Spring Cloud组件提供jar包及启动命令行
+	Spring Cloud配置文件抽离
+组件化:
+	组件项目存放到组件目录
+CI:
+	修改使用标准的Spring Boot构建插件
+	Jenkins
+CD:
+	Docker
+	Harbor
+	K8S
+	流程、角色、权限、升级策略、执行
+日志:
+	Log4j 日志插件及配置
+	EFK
+监控:
+	SpringBoot Actuator
+	Skywalking Java Agent + Skywalking + ES
+	Prometheus + Thanos + Grafana
+告警:
+	邮件
+	Alert Manager
