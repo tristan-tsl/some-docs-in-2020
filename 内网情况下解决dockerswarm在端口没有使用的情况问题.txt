@@ -1,0 +1,5 @@
+docker swarm join-token manager
+1、修改docker 配置文件, 将原来端口改成可用端口
+2、使用iptables 代理原来端口
+8753 、8732
+iptables -t nat -A PREROUTING -p tcp --dport 8753 -j REDIRECT --to-ports 2377
