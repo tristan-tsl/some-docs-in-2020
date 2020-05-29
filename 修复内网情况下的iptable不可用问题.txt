@@ -1,0 +1,16 @@
+		内网情况下iptables问题:
+			https://centos.pkgs.org/7/centos-x86_64/iptables-1.4.21-34.el7.x86_64.rpm.html
+			
+			rpm -Uvh iptables-1.4.21-34.el7.x86_64.rpm
+			rpm -ivh iptables-services-1.4.21-34.el7.x86_64.rpm
+			
+			不要默认的firewalld:
+				systemctl stop firewalld
+				systemctl mask firewalld
+				
+			service iptables save
+			systemctl enable iptables
+			systemctl status iptables
+			systemctl start iptables
+			systemctl restart iptables
+			systemctl stop iptables
