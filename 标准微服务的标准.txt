@@ -1,0 +1,18 @@
+创建一个基础CRUD项目
+	standard
+		micro-service  最小程度的子服务工程
+		web-service	   最小程度的web工程
+			mvc
+				feign/restTemplate(send net request)
+				springmvc(springboot web)
+					request data serialize
+					swagger
+				mybatis
+					transaction
+			crud-demo
+				list/map data struct operate
+				sql(oracle)
+				junit/mock
+			project
+				data
+				code
