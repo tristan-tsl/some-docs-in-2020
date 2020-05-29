@@ -1,0 +1,22 @@
+	版本: 11.2.0
+	
+	实践:
+		mkdir -p /data/tristan/oracle && chmod 777 /data/tristan
+		ll /home/oracle 		或者		find / | grep oracle
+		su - oracle;
+		使用exp导出oracle x实例到二进制文件
+			exp username/password@db_name file=/data/tristan/oracle/export.dmp full=y
+			exp easdev/easdev@easstand file=/data/tristan/oracle/export.dmp full=y
+		su - soadb;
+		mkdir -p /data/tristan/oracle && chmod 777 /data/tristan
+		传输文件到新服务器上(winScp)
+		创建数据库和用户
+			sqlplus / as sysdba
+			
+			create tablespace tbs_1 datafile '/home/db/oracle/oradata/soa/tbs_1.dbf' size 100m aotuextend on next 10m;
+			create user easdev identified by easdev default tablespace tbs_1;
+			grant connect,resource,dba to easdev;
+			删除用户:
+				drop user easdev cascade;
+			sqlplus soa/soa
+				select t.table_name from user_tables t;
