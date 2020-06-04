@@ -12,7 +12,7 @@
 
 ## 下载nexus安装包for windows
 
-https://segmentfault.com/a/1190000015629878
+https://www.sonatype.com/download-nexus-repo-oss
 
 目前我用的是nexus3
 
