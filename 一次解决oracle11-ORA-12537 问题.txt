@@ -1,7 +1,5 @@
 su - soadb;
 
-lsnrctl status
-
 find /home/db/oracle/ |grep listener.log
 
 显示:
@@ -9,34 +7,21 @@ find /home/db/oracle/ |grep listener.log
 	
 cd /home/db/oracle/diag/tnslsnr/soa/listener/trace
 
-	
 lsnrctl set log_status off
 rename listener.log listener.old listener.log
 lsnrctl set log_status on
 
-ls -lh /home/db/oracle/oradata/soa/tbs_1.dbf
-
 
 sqlplus / as sysdba
 
-出现: ORA-00020: maximum number of processes (150) exceeded
-
-
-
-sqlplus /nolog
-show parameter sessions  查看服务参数
-
-conn easdev/easdev@soa
-
-
 修改系统参数:
 	show parameter sessions
-	alter system set sessions=496 scope=spfile;
+	alter system set sessions=2480 scope=spfile;
 	
 	show parameter processes
-	alter system set processes=300 scope=spfile;
+	alter system set processes=1500 scope=spfile;
 
-重启(未尝试):
+重启:
 	shutdown immediate
 	Startup
 	exit
