@@ -125,19 +125,19 @@ http://10.192.56.204:8081
 
 进入Repository页面
 
-![image-20200604153206647](C:\Users\Administrator\Desktop\监控体系\nexus3安装及配置docker镜像源代理.assets\image-20200604153206647.png)
+![image-20200604153206647](nexus3安装及配置docker镜像源代理.assets\image-20200604153206647.png)
 
 进入Blob Stores
 
-![image-20200604153231031](C:\Users\Administrator\Desktop\监控体系\nexus3安装及配置docker镜像源代理.assets\image-20200604153231031.png)
+![image-20200604153231031](nexus3安装及配置docker镜像源代理.assets\image-20200604153231031.png)
 
 创建Blob Stores
 
-![image-20200604153247607](C:\Users\Administrator\Desktop\监控体系\nexus3安装及配置docker镜像源代理.assets\image-20200604153247607.png)
+![image-20200604153247607](nexus3安装及配置docker镜像源代理.assets\image-20200604153247607.png)
 
 
 
-![image-20200604153332373](C:\Users\Administrator\Desktop\监控体系\nexus3安装及配置docker镜像源代理.assets\image-20200604153332373.png)
+![image-20200604153332373](nexus3安装及配置docker镜像源代理.assets\image-20200604153332373.png)
 
 
 
@@ -145,23 +145,23 @@ http://10.192.56.204:8081
 
 创建一个Repository
 
-![image-20200604153359008](C:\Users\Administrator\Desktop\监控体系\nexus3安装及配置docker镜像源代理.assets\image-20200604153359008.png)
+![image-20200604153359008](nexus3安装及配置docker镜像源代理.assets\image-20200604153359008.png)
 
-![image-20200604153425181](C:\Users\Administrator\Desktop\监控体系\nexus3安装及配置docker镜像源代理.assets\image-20200604153425181.png)
+![image-20200604153425181](nexus3安装及配置docker镜像源代理.assets\image-20200604153425181.png)
 
 创建本机仓库
 
-![image-20200604153447072](C:\Users\Administrator\Desktop\监控体系\nexus3安装及配置docker镜像源代理.assets\image-20200604153447072.png)
+![image-20200604153447072](nexus3安装及配置docker镜像源代理.assets\image-20200604153447072.png)
 
-![image-20200604153527135](C:\Users\Administrator\Desktop\监控体系\nexus3安装及配置docker镜像源代理.assets\image-20200604153527135.png)
+![image-20200604153527135](nexus3安装及配置docker镜像源代理.assets\image-20200604153527135.png)
 
-![image-20200604153541347](C:\Users\Administrator\Desktop\监控体系\nexus3安装及配置docker镜像源代理.assets\image-20200604153541347.png)
+![image-20200604153541347](nexus3安装及配置docker镜像源代理.assets\image-20200604153541347.png)
 
 ### 创建代理镜像存储库(dockerhub/aliyun)
 
 创建一个代理仓库
 
-![image-20200604153624048](C:\Users\Administrator\Desktop\监控体系\nexus3安装及配置docker镜像源代理.assets\image-20200604153624048.png)
+![image-20200604153624048](nexus3安装及配置docker镜像源代理.assets\image-20200604153624048.png)
 
 dockerhub:
 
@@ -171,11 +171,11 @@ aliyun:
 
 Remote storage: https://registry.cn-shenzhen.aliyuncs.com
 
-![image-20200604153707486](C:\Users\Administrator\Desktop\监控体系\nexus3安装及配置docker镜像源代理.assets\image-20200604153707486.png)
+![image-20200604153707486](nexus3安装及配置docker镜像源代理.assets\image-20200604153707486.png)
 
-![image-20200604153849763](C:\Users\Administrator\Desktop\监控体系\nexus3安装及配置docker镜像源代理.assets\image-20200604153849763.png)
+![image-20200604153849763](nexus3安装及配置docker镜像源代理.assets\image-20200604153849763.png)
 
-![image-20200604153912751](C:\Users\Administrator\Desktop\监控体系\nexus3安装及配置docker镜像源代理.assets\image-20200604153912751.png)
+![image-20200604153912751](nexus3安装及配置docker镜像源代理.assets\image-20200604153912751.png)
 
 
 
@@ -183,21 +183,21 @@ Remote storage: https://registry.cn-shenzhen.aliyuncs.com
 
 创建一个组合仓库
 
-![image-20200604153940742](C:\Users\Administrator\Desktop\监控体系\nexus3安装及配置docker镜像源代理.assets\image-20200604153940742.png)
+![image-20200604153940742](nexus3安装及配置docker镜像源代理.assets\image-20200604153940742.png)
 
-![image-20200604154020477](C:\Users\Administrator\Desktop\监控体系\nexus3安装及配置docker镜像源代理.assets\image-20200604154020477.png)
+![image-20200604154020477](nexus3安装及配置docker镜像源代理.assets\image-20200604154020477.png)
 
-![image-20200604154110442](C:\Users\Administrator\Desktop\监控体系\nexus3安装及配置docker镜像源代理.assets\image-20200604154110442.png)
+![image-20200604154110442](nexus3安装及配置docker镜像源代理.assets\image-20200604154110442.png)
 
 最终结果如下
 
-![image-20200604154433287](C:\Users\Administrator\Desktop\监控体系\nexus3安装及配置docker镜像源代理.assets\image-20200604154433287.png)
+![image-20200604154433287](nexus3安装及配置docker镜像源代理.assets\image-20200604154433287.png)
 
 访问: http://10.192.56.204/v2/_catalog
 
 ### 启用Docker realms
 
-![image-20200604180944548](C:\Users\Administrator\Desktop\监控体系\nexus3安装及配置docker镜像源代理.assets\image-20200604180944548.png)
+![image-20200604180944548](nexus3安装及配置docker镜像源代理.assets\image-20200604180944548.png)
 
 ## 使用Nexus3-Docker
 
