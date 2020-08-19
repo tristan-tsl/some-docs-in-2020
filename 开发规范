@@ -1,0 +1,119 @@
+# 开发规范
+
+思路:
+
+​	1、可持续性的统一编码规范习惯
+
+​	2、可持续性的检查发现已编码差异规范的状况, 是否有, 有哪些, 差异显示已存在, 显示可用调整的方式&结果
+
+# 如何1、形成统一编码规范
+
+学习、练习、复检、分享、感悟总结 >规范
+
+规范: 项目领域、工程方式、思维方式、开发语言(js/python/java/go)
+
+## 项目领域
+
+## web
+
+<待补充>
+
+### 数据分析
+
+<待补充>
+
+## 工程方式
+
+工程入口
+
+组件
+
+业务
+
+测试
+
+
+
+第三方组件
+
+项目依赖
+
+文档
+
+
+
+交付
+
+
+
+日志
+
+临时文件
+
+## 思维方式
+
+### 需求
+
+### 敏捷开发
+
+### 顶层设计
+
+### 微服务化/组件化
+
+### 编码
+
+#### 面向过程
+
+#### 面向对象
+
+封装、继承、多态
+
+设计模式
+
+元数据角度
+
+## 语言编码规范
+
+js: https://git.code.oa.com/standards/javascript
+
+java: https://git.code.oa.com/standards/java
+
+python: https://git.code.oa.com/standards/python
+
+go: https://git.code.oa.com/standards/go
+
+c++: https://git.code.oa.com/standards/cpp
+
+
+
+
+
+# 如何2、检查发现差异:
+
+
+​	开发项目使用IDE
+
+​		习惯性的格式化代码, 快捷键为: "Ctrl + Alt + L"
+
+​		关注IDE在代码行画的下划线, 悬停鼠标, 尽可能的按照提示进行调整
+
+​	安装SonarLint, 关注IDE底部的SonarLint栏目的提示, 按照提示进行调整
+
+​		如何安装:
+
+​			点击: "File" -> 点击: ”Settings” -> 点击: "Plugins" -> 点击: "Marketplace" 
+
+​				-> 输入: "SonarLint" -> 按下: "Enter" -> 等待: "SonarLint" 项出现 -> 点击: 搜索到的SonarLint项右上角的"Install"按钮出现 
+
+​				-> 等待: 安装进度完成, "Restart IDE"按钮出现 -> 点击: "Restart IDE" 
+
+​	关注CodeCC:
+
+​		地址: http://v2.codecc.oa.com
+
+​		案例: http://v2.codecc.oa.com/codecc/CODE_389088/task/300798/detail
+
+​		关注: 荷鲁斯开源组件安全检测
+
+​			点击: 问题数跳转到详细问题进行查询并尽可能修复/兼容
+
