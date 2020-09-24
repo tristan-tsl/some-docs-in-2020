@@ -1,0 +1,3 @@
+中间件/数据库/mysql/mysql主从搭建.md
+虚拟化/vmware/个人使用的vmware
+$其他中间件
