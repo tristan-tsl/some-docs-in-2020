@@ -98,6 +98,10 @@ stop slave;
 set GLOBAL SQL_SLAVE_SKIP_COUNTER=1; 
 ```
 
+
+
+
+
 操作记录
 指令编写
 ansible-playbook编写
