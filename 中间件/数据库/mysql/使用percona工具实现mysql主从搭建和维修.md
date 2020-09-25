@@ -12,10 +12,17 @@ https://www.cnblogs.com/kevingrace/p/6261091.html
 
 ```
 # 下载percona工具
-wget https://www.percona.com/downloads/percona-toolkit/3.2.1/binary/redhat/7/x86_64/percona-toolkit-3.2.1-1.el7.x86_64.rpm
+wget https://www.percona.com/downloads/percona-toolkit/3.1/binary/redhat/7/x86_64/percona-toolkit-3.1-1.el7.x86_64.rpm
 
 # 安装percona
-rpm -ivh percona-toolkit-3.2.1-1.el7.x86_64.rpm
+rpm -ivh percona-toolkit-3.1-1.el7.x86_64.rpm
 ```
 
-然后你就会发现, 我靠docker是真的香
+实际上docker方式使用percona也是可以的
+
+https://hub.docker.com/u/percona
+
+https://hub.docker.com/r/percona/percona-server
+
+
+
