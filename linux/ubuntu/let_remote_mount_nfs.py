@@ -15,6 +15,13 @@ os.system("echo target_server: %s \n password:%s" % (str(target_server_list), pa
 os.system("apt-get install sshpass")
 time.sleep(1)
 
+
+def exec_remote_shell(remote_host_ip, remote_host_password, shell):
+    command = """ sshpass -p %s ssh root@%s "%s" """ % (remote_host_password, remote_host_ip, shell)
+    os.system("""echo "command is: %s" """ % command)
+    os.system(command)
+
+
 os.system("echo send script file to target server")
 for item in target_server_list:
     item = item.strip()
@@ -22,7 +29,7 @@ for item in target_server_list:
     os.system("""echo "command is: %s" """ % command)
     os.system(command)
     time.sleep(2)
-    command = """ sshpass -p %s ssh root@%s "python mount_nfs.py" """ % (password, item)
-    os.system("""echo "command is: %s" """ % command)
-    os.system(command)
+    exec_remote_shell(item, password, "apt install -y python")
+    exec_remote_shell(item, password, "python mount_nfs.py")
+
 os.system(""" echo "all right done" """)
