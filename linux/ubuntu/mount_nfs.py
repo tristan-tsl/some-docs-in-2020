@@ -47,5 +47,5 @@ os.system("echo mount all config")
 os.system("mount -a")
 command = ""
 for item in nfs_server_suffix_list:
-    command += "df -h  %s" % item
+    command += "df -h  %s\n" % item
 os.system(command)
