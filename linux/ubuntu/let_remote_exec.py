@@ -11,7 +11,6 @@ with open(target_server_file_name) as f:
         item = target_server_list[index]
         if not item or "" == item:
             target_server_list.pop(index)
-password = ""
 with open(password_file_name) as f:
     password = f.read()
 os.system("echo target_server: %s \n password:%s" % (str(target_server_list), password))
@@ -28,7 +27,7 @@ def exec_remote_shell(remote_host_ip, remote_host_password, shell):
 
 
 def transfer_remote_file(remote_host, remote_password, local_filepath, remote_filepath):
-    command = """sshpass -p %s scp %s root@%s:%s""" % (password, local_filepath, item, remote_filepath)
+    command = """sshpass -p %s scp %s root@%s:%s""" % (remote_password, local_filepath, remote_host, remote_filepath)
     os.system("""echo "command is: %s" """ % command)
     os.system(command)
 
