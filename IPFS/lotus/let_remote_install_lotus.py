@@ -22,8 +22,8 @@ os.system("apt-get install sshpass")
 time.sleep(1)
 
 
-def exec_remote_shell(remote_host_ip, remote_host_password, shell):
-    command = """ sshpass -p %s ssh root@%s "%s" """ % (remote_host_password, remote_host_ip, shell)
+def exec_remote_shell(remote_host, remote_password, shell):
+    command = """ sshpass -p %s ssh root@%s "%s" """ % (remote_password, remote_host, shell)
     os.system("""echo "command is: %s" """ % command)
     os.system(command)
     time.sleep(1)
