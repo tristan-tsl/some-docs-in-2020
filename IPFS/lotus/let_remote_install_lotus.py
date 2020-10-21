@@ -6,11 +6,12 @@ target_server_list = []
 target_server_file_name = "target_server"
 password_file_name = "password"
 with open(target_server_file_name) as f:
-    target_server_list = f.readlines()
-    for index in range(len(target_server_list)):
-        item = target_server_list[index]
+    original_target_server_list = f.readlines()
+    for item in original_target_server_list:
         if not item or "" == item:
-            target_server_list.pop(index)
+            continue
+        target_server_list.append(item)
+
 with open(password_file_name) as f:
     password = f.read()
 os.system("echo target_server: %s \n password:%s" % (str(target_server_list), password))
