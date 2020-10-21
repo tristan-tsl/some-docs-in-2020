@@ -1,5 +1,4 @@
 #!/bin/bash
-cd /root/106/pro
 mkdir cmd
 tar zxvf lotus-miner-pro.f7-0.10.0.tar.gz -C cmd/
 cp cmd/* /usr/local/bin/
@@ -14,15 +13,15 @@ ntpdate ntp.aliyun.com
 # install ulimit
 ulimit -n 1048576
 sed -i "/nofile/d" /etc/security/limits.conf
-echo "* hard nofile 1048576" >> /etc/security/limits.conf
-echo "* soft nofile 1048576" >> /etc/security/limits.conf
-echo "root hard nofile 1048576" >> /etc/security/limits.conf
-echo "root soft nofile 1048576" >> /etc/security/limits.conf
+echo "* hard nofile 1048576" >>/etc/security/limits.conf
+echo "* soft nofile 1048576" >>/etc/security/limits.conf
+echo "root hard nofile 1048576" >>/etc/security/limits.conf
+echo "root soft nofile 1048576" >>/etc/security/limits.conf
 
 # setup SWAP, 64GB, swappiness=1
-SWAPSIZE=`swapon --show | awk 'NR==2 {print $3}'`
+SWAPSIZE=$(swapon --show | awk 'NR==2 {print $3}')
 if [ "$SWAPSIZE" != "64G" ]; then
-  OLDSWAPFILE=`swapon --show | awk 'NR==2 {print $1}'`
+  OLDSWAPFILE=$(swapon --show | awk 'NR==2 {print $1}')
   NEWSWAPFILE="/swapfile"
   if [ -n "$OLDSWAPFILE" ]; then
     swapoff -v $OLDSWAPFILE
@@ -34,10 +33,10 @@ if [ "$SWAPSIZE" != "64G" ]; then
   chmod 600 $NEWSWAPFILE
   mkswap $NEWSWAPFILE
   swapon $NEWSWAPFILE
-  echo "$NEWSWAPFILE none swap sw 0 0" >> /etc/fstab
+  echo "$NEWSWAPFILE none swap sw 0 0" >>/etc/fstab
   sysctl vm.swappiness=1
   sed -i "/swappiness/d" /etc/sysctl.conf
-  echo "vm.swappiness=1" >> /etc/sysctl.conf
+  echo "vm.swappiness=1" >>/etc/sysctl.conf
 fi
 
 # install GPU driver
@@ -47,3 +46,12 @@ if [ $NEEDGPU -ne 0 ]; then
   apt install -y nvidia-driver-440-server
   echo "reboot to make the GPU to take effect!"
 fi
+
+# common config for lotus銆乵iner銆亀orker
+export LOTUS_PATH="$HOME/.lotus"
+export LOTUS_MINER_PATH="$HOME/.lotusminer"
+export LOTUS_WORKER_PATH="$HOME/.lotusworker"
+export FIL_PROOFS_PARAMETER_CACHE="$HOME/filecoin-proof-parameters"
+
+# set mirro address
+export IPFS_GATEWAY="https://proof-parameters.s3.cn-south-1.jdcloud-oss.com/ipfs/"
