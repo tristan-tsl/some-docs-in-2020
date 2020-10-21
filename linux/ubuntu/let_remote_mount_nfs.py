@@ -21,3 +21,5 @@ for item in target_server_list:
     command = """sshpass -p %s scp ~/mount_nfs.py root@%s:mount_nfs.py""" % (password, item)
     os.system("""echo "command is: %s" """ % command)
     os.system(command)
+    time.sleep(2)
+    command = """ sshpass -p %s ssh root@%s "python mount_nfs.py" """ % (password, item)
