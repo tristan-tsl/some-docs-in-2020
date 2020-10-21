@@ -1,4 +1,3 @@
-#!/bin/bash
 mkdir cmd
 tar zxvf lotus-miner-pro.f7-0.10.0.tar.gz -C cmd/
 cp cmd/* /usr/local/bin/
@@ -47,7 +46,7 @@ if [ $NEEDGPU -ne 0 ]; then
   echo "reboot to make the GPU to take effect!"
 fi
 
-# common config for lotus銆乵iner銆亀orker
+# common config for lotus
 export LOTUS_PATH="$HOME/.lotus"
 export LOTUS_MINER_PATH="$HOME/.lotusminer"
 export LOTUS_WORKER_PATH="$HOME/.lotusworker"
