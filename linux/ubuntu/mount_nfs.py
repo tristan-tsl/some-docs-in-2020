@@ -37,7 +37,7 @@ command = ""
 for index in range(len(nfs_server_suffix_list)):
     suffix = nfs_server_suffix_list[index]
     ip_addr = nfs_server_list[index]
-    command += "%s:/mnt/md0 %s  nfs4      defaults    0       0" % (ip_addr, suffix)
+    command += "%s:/mnt/md0 %s  nfs4      defaults    0       0\n" % (ip_addr, suffix)
 os.system("""
 sudo cat >> /etc/fstab<<EOF
 %s
