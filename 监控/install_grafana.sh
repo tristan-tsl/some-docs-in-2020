@@ -1,5 +1,6 @@
 # official doc address: https://grafana.com/grafana/download/7.2.2?platform=docker
 # official docker image address: https://hub.docker.com/r/grafana/grafana
+rm -rf /root/tistan/grafana/configs /root/tristan/grafana/data
 mkdir -p /root/tistan/grafana/configs /root/tristan/grafana/data
 chmod -R 777 /root/tristan/grafana/configs /root/tristan/grafana/data
 # start grafana
