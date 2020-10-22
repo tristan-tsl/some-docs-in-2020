@@ -38,9 +38,7 @@ def transfer_remote_file(remote_host, remote_password, local_filepath, remote_fi
 
 os.system("echo send script file to target server")
 for item in target_server_list:
-    transfer_remote_file(item, password, "node_exporter-1.0.1.linux-amd64/node_exporter",
-                         "node_exporter-1.0.1.linux-amd64/node_exporter")
-    exec_remote_shell(item, password,
-                      "chmod +x node_exporter-1.0.1.linux-amd64/node_exporter && nohup ./node_exporter-1.0.1.linux-amd64/node_exporter >~/node_exporter.log 2>&1 &")
+    transfer_remote_file(item, password, "node_exporter", "node_exporter")
+    exec_remote_shell(item, password, "chmod +x node_exporter && nohup ./node_exporter >~/node_exporter.log 2>&1 &")
     exec_remote_shell(item, password, "curl http://localhost:9100/metrics")
 os.system(""" echo "all right done, thank you for use this script" """)
