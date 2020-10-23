@@ -1,8 +1,10 @@
 ---
-- hosts: nfs_server
+- name: install nfs server
+  hosts: nfs_server
   remote_user: root
   tasks:
-    -shell:
+  - name: install nfs server
+    shell:
       cmd: |
         apt-get update -y
         apt-get update -y && apt install -y nfs-kernel-server
