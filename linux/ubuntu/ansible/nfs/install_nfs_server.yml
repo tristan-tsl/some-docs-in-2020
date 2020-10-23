@@ -1,0 +1,16 @@
+---
+- name: update the config of nfs-server in /etc/exports
+  hosts: nfs_server
+  remote_user: root
+  vars:
+    local_path: /mnt/md0
+  shell: |
+    apt-get update -y
+    apt-get update -y && apt install -y nfs-kernel-server
+    cat >> /etc/exports<<EOF
+    {{local_path}}  *(rw,async,no_subtree_check,no_root_squash)
+    EOF
+    systemctl enable nfs-server.service
+    systemctl start nfs-server.service
+    systemctl status nfs-server.service
+    ufw disable
