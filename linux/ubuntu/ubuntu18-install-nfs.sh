@@ -16,7 +16,7 @@ sudo systemctl enable nfs-server.service
 sleep 1
 echo "update exports"
 sudo cat >> /etc/exports<<EOF
-/mnt/md0  *(rw,async,no_subtree_check)
+/mnt/md0  *(rw,async,no_subtree_check,no_root_squash)
 EOF
 
 sleep 1
