@@ -1,0 +1,1 @@
+mv install_nfs_server.yml ~/tristan/ansible/nfs/install_nfs_server.yml
