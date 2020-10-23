@@ -1,6 +1,14 @@
 import os
 import time
 
+"""
+完善方向:
+    并行调度
+    状态
+    日志
+"""
+
+
 # read target server config
 target_server_list = []
 target_server_file_name = "target_server"
