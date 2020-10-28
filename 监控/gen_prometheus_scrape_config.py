@@ -1,40 +1,18 @@
-server_ip_list = [
-    "10.11.2.50"
-    , "10.11.2.52"
-    , "10.11.2.54"
-    , "10.11.2.56"
-    , "10.11.2.58"
-    , "10.11.2.60"
-    , "10.11.2.66"
-    , "10.11.2.68"
-    , "10.11.2.70"
-    , "10.11.2.72"
-    , "10.11.2.74"
-    , "10.11.2.76"
-    , "10.11.2.78"
-    , "10.11.2.80"
-    , "10.11.2.82"
-    , "10.11.2.84"
-    , "10.11.2.86"
-    , "10.11.2.88"
-    , "10.11.2.90"
-    , "10.11.2.92"
-    , "10.11.2.94"
-    , "10.11.2.96"
-    , "10.11.2.98"
-    , "10.11.2.100"
-    , "10.11.2.202"
-    , "10.11.2.204"
-    , "10.11.2.206"
-    , "10.11.2.208"
-    , "10.11.2.210"
-    , "10.11.2.212"
-]
+target_server_list = []
+with open('target_server') as f:
+    original_target_server_list = f.readlines()
+    for item in original_target_server_list:
+        if not item or "" == item:
+            continue
+        item = item.strip().replace("\n", "").replace("\t", "")
+        target_server_list.append(item)
 
 result = ""
-for item in server_ip_list:
-    result += """  - job_name: 'node_exporter_lotus_worker_%s'
+for item in target_server_list:
+    result += """  - job_name: 'node_exporter_%s'
     metrics_path: '/metrics'
     static_configs:
     - targets: ['%s:9100']\n""" % (item, item)
+with open('prometheus.yml', 'w') as f:
+    f.write(result)
 print(result)
